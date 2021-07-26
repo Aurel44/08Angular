@@ -1,0 +1,10 @@
+<li [ngClass]="{'list-group-item': true,'list-group-item-success': postLove > 0,'list-group-item-danger': postLove < 0}">
+    <div class="header" [ngStyle]="{'display': 'flex'}">
+        <h2 [ngStyle]="{'font-size': 'bolder'}">{{ postTitle }}</h2>
+        <div class="date ml-auto" [ngStyle]="{'font-style': 'italic'}">{{ postDate | date :"dd/MM/yy, HH:mm"}}</div>
+    </div>
+
+    <p>{{ postContent }}</p>
+    <button class=" btn btn-success m-1 p-1" [ngStyle]="{'width' : '100px'}" [disabled]="!isAuth" (click)="onPlus()">Like</button>
+    <button class=" btn btn-danger m-1 p-1" [ngStyle]="{'width' : '100px'}" [disabled]="!isAuth" (click)="onMinus()">Don't like</button>
+</li>
